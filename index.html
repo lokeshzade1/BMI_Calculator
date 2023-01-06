@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI_Calculator_assignment`</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="main">
+        <div id="age">Age<input type="text" id="inputage"><span>ages:2- 120</span></div>
+        <div id="gender">
+            <label> Gender</label>
+            <input type="radio" name="gender">male </input>
+            <input type="radio" name="gender">female</input>
+        </div>
+        <div id="height"><span>Height</span><input type="text" placeholder="cm" id="inputheight"></div>
+        <div id ='weight'><span>weight</span></span><input type="text" placeholder="kg" id="inputweight"></div>
+        <div id="btn_sec">
+            <button onclick={cal()} id="cal">calculate</button>
+            <button onclick={cancal()}>clear</button>
+        </div>
+    </div>
+    <div id ='result'>
+
+    </div>
+    <script>
+        let age=document.getElementById('inputage')
+        let height=document.getElementById('inputheight')
+        let weight=document.getElementById('inputweight')
+        function cal(){
+            if(Number(age.value)<2 || Number(age.value)>120){
+                document.getElementById('result').innerText='please enter age bet 2 to 120'
+            }
+            else{
+                let hei=parseFloat((height.value)/100)
+                let wei=parseFloat((weight.value))
+                if(hei=='NaN' || wei=='NaN'){
+                    document.getElementById('result').innerText='please enter valid num'
+                }
+                let BMi=wei/hei
+                let ex=''
+                if(BMi<16){
+                    ex='Serving thiness'
+                }
+                else if(BMi>25 &&BMi<40){
+                    ex='Overwight'
+                }
+                else{
+                    ex='Obense class III'
+                }
+                document.getElementById('result').innerText=BMi+' '+'kg/m*m'+' '+ex
+            }
+        }
+        function cancal(){
+            document.getElementById('inputage').value=''
+            document.getElementById('inputheight').value=''
+            document.getElementById('inputweight').value=''
+            document.getElementById('result').innerText=''
+        }
+       
+    </script>
+</body>
+</html>

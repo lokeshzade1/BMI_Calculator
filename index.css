@@ -1,0 +1,30 @@
+#main{
+    border: 1px solid black;
+    text-align: center;
+    width: 30%;
+    background-color: rgb(196, 240, 225);
+}
+#age{
+    margin-top: 5px;
+}
+#btn_sec{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+#result{
+    float: left;
+    border: 2px solid ;
+    width: 30%;
+    height: 100px;
+    margin-top: 20px;
+    font-size: larger;
+}
+#cal{
+    background-color: green;
+    color: white;
+}
